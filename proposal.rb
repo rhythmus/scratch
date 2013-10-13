@@ -15,7 +15,7 @@ def cvc
 end
 
 def vcv
-  "#{nucleii}#{onset}#{nucleii}"
+  "#{nucleii}#{coda}#{nucleii}"
 end
 
 def word
