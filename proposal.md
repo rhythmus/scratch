@@ -49,7 +49,7 @@ I generated some addresses of different lengths, selecting syllables randomly. (
 
 Sounds kinda Polynesian huh?
 
-I generate the full set of combinations, trim some potentially offensive, then pick syllables psuedorandomly: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-syllables.rb))
+I generate the full set of combinations, trim some that are potentially offensive, then pick syllables psuedorandomly: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-syllables.rb))
 
     ["zod", "dad", "het", "dey", "hor", "dot", "kap", "gar", "bat", "gin", "bir", "gum", "bun", "heg", "dek", "hod",
      "dog", "huy", "gad", "bag", "gey", "bid", "got", "boy", "har", "das", "hin", "dir", "huk", "dun", "keg", "gek",
@@ -85,7 +85,47 @@ I generate the full set of combinations, trim some potentially offensive, then p
      "avo", "uto", "ovi", "ite", "eta", "avu", "utu", "ovo", "iti", "ete", "aza", "uva", "ovu", "ito", "eti", "aze",
      "uve", "oza", "itu", "eto", "azi", "uvi", "oze", "iva", "etu", "azo", "uvo", "ozi", "ive", "eva", "azu", "uvu"]
 
-0 is still ~zod, but 256 is now ~ozozod. Which is not what we wanted, we wanted ~zodozo! Frig.
+0 is still ~zod, but 256 is now ~ozozod. Which is not what we wanted, we wanted ~zodozo! Frig. Didn't realise this thing was big-endian.
+
+Formatted for Hoon anyway:
+
+    ++  po
+      ~/  %po
+      =+  :-  ^=  sis
+              'ozoivieveebauzaozuivoeviebeabaubaivuevoebiabeube\
+              /izaevueboabiubiizeezaebuabouboiziezeedaabuubuizo\
+              /eziedeadaudaizuezoediadeudeobaezuedoadiudiobeiba\
+              /eduadoudoobiibeegaaduuduoboibiegeahaugaobuiboegi\
+              /aheugeohaibuegoahiugioheidaeguahougoohiideehaahu\
+              /uguohoidiehealauhaohuidoehialeuheolaiduehoaliuhi\
+              /oleihaehualouhooliiheekaaluuhuoloihiekeamaulaolu\
+              /ihoekiameuleomaihuekoamiuliomeilaekuamouloomiile\
+              /elaamuuluomoilieleanaumaomuiloelianeumeonailuelo\
+              /aniumioneimaeluanoumooniimeemaanuumuonoimiemeapa\
+              /unaonuimoemiapeuneopaimuemoapiuniopeinaemuapouno\
+              /opiineenaapuunuopoinieneataupaopuinoeniateupeota\
+              /inuenoatiupioteipaenuatoupootiipeepaatuupuotoipi\
+              /epeavautaotuipoepiaveuteovaipuepoaviutioveitaepu\
+              /avoutooviiteetaavuutuovoitieteazauvaovuitoetiaze\
+              /uveozaituetoaziuviozeivaetuazouvooziiveevaazuuvu'
+          ^=  dex
+          'zoddadhetdeyhordotkapgarbatginbirgumbunhegdekhod\
+          /doghuygadbaggeybidgotboyhardashindirhukdunkeggek\
+          /bengogbokhaddafheydibhosdoykargasbaygipbisgunbup\
+          /hekdemhofdokkabgafbakgibbifgoybubhasdathipdishum\
+          /dupkekgembepgokbomhafdaghibdidhotdubkasgatbebgir\
+          /bitgupburhemdenhogdomkadgagbamgidbiggubbudhatday\
+          /hirdithundurkemgenbergombonhagdakhiddifhoydudkat\
+          /gaybedgisbiygurbushendephokdonkafgakbangifbikgud\
+          /bufhaydebhisdiyhupduskengepbesgonbophakdamhifdig\
+          /hubdufkaygebbefgitbobgusbuthepderhomdopkaggambap\
+          /gigbimgufbughebdedhitdobhurdutbabgerbetgopborham\
+          /danhigdimhuddugkebgedbeggiybodgutbuyherdeshondor\
+          /kamganbargikbingugbukheddefhiydodhusduybadgesbey\
+          /gorboshandaphikdinhufdukkedgefbekgobbofguydabhes\
+          /dethopdoskangapbasgimbipgukbumhefdeghobdofhutgab\
+          /bafgetbibgosbothapdarhimdiphugdumkefgegbemgofbog'
+      |%
 
 #### Pruning/blacklist
 
