@@ -33,7 +33,7 @@ Mnemnion, I'm sorry, I have to use the letter e - a VCV group would only have 19
 
 #### Moving on:
 
-I generated some addresses of different lengths, selecting syllables randomly. ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-ships.rb))
+I generated some addresses of different lengths, selecting syllables randomly. ([code](https://github.com/dclelland/scratch/blob/master/proposal-a.rb))
 
     ~zek
     ~honape
@@ -49,91 +49,110 @@ I generated some addresses of different lengths, selecting syllables randomly. (
 
 Sounds kinda Polynesian huh?
 
-I generate the full set of combinations, trim some that are potentially offensive, then pick syllables psuedorandomly: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-syllables.rb))
+I generate the full set of combinations, trim some that are potentially offensive, then pick syllables psuedorandomly: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a.rb))
 
-    ["zod", "dad", "het", "dey", "hor", "dot", "kap", "gar", "bat", "gin", "bir", "gum", "bun", "heg", "dek", "hod",
-     "dog", "huy", "gad", "bag", "gey", "bid", "got", "boy", "har", "das", "hin", "dir", "huk", "dun", "keg", "gek",
-     "ben", "gog", "bok", "had", "daf", "hey", "dib", "hos", "doy", "kar", "gas", "bay", "gip", "bis", "gun", "bup",
-     "hek", "dem", "hof", "dok", "kab", "gaf", "bak", "gib", "bif", "goy", "bub", "has", "dat", "hip", "dis", "hum",
-     "dup", "kek", "gem", "bep", "gok", "bom", "haf", "dag", "hib", "did", "hot", "dub", "kas", "gat", "beb", "gir",
-     "bit", "gup", "bur", "hem", "den", "hog", "dom", "kad", "gag", "bam", "gid", "big", "gub", "bud", "hat", "day",
-     "hir", "dit", "hun", "dur", "kem", "gen", "ber", "gom", "bon", "hag", "dak", "hid", "dif", "hoy", "dud", "kat",
-     "gay", "bed", "gis", "biy", "gur", "bus", "hen", "dep", "hok", "don", "kaf", "gak", "ban", "gif", "bik", "gud",
-     "buf", "hay", "deb", "his", "diy", "hup", "dus", "ken", "gep", "bes", "gon", "bop", "hak", "dam", "hif", "dig",
-     "hub", "duf", "kay", "geb", "bef", "git", "bob", "gus", "but", "hep", "der", "hom", "dop", "kag", "gam", "bap",
-     "gig", "bim", "guf", "bug", "heb", "ded", "hit", "dob", "hur", "dut", "bab", "ger", "bet", "gop", "bor", "ham",
-     "dan", "hig", "dim", "hud", "dug", "keb", "ged", "beg", "giy", "bod", "gut", "buy", "her", "des", "hon", "dor",
-     "kam", "gan", "bar", "gik", "bin", "gug", "buk", "hed", "def", "hiy", "dod", "hus", "duy", "bad", "ges", "bey",
-     "gor", "bos", "han", "dap", "hik", "din", "huf", "duk", "ked", "gef", "bek", "gob", "bof", "guy", "dab", "hes",
-     "det", "hop", "dos", "kan", "gap", "bas", "gim", "bip", "guk", "bum", "hef", "deg", "hob", "dof", "hut", "gab",
-     "baf", "get", "bib", "gos", "bot", "hap", "dar", "him", "dip", "hug", "dum", "kef", "geg", "bem", "gof", "bog"]
+    ["zod", "zes", "mik", "bof", "mud", "har", "pun", "gom", "dak", "geb", "kun", "bef", "buy", "tos", "dar", "lob",
+     "lof", "puk", "vok", "zek", "bir", "kir", "var", "zen", "kaf", "gad", "dud", "bis", "naf", "das", "hag", "tir",
+     "pet", "lif", "zip", "bon", "nif", "zim", "mur", "bum", "zey", "tar", "mab", "gus", "hap", "zin", "mok", "gik",
+     "tem", "mit", "piy", "nok", "les", "zib", "zud", "tug", "vos", "hak", "gob", "pin", "pug", "hip", "vut", "kur",
+     "num", "pim", "hat", "hon", "kik", "tes", "vup", "vat", "biy", "pem", "zit", "daf", "vif", "gin", "zas", "dug",
+     "zir", "het", "pan", "kus", "net", "tod", "may", "pat", "hem", "kuk", "dop", "hek", "pof", "kin", "lip", "hog",
+     "bod", "nep", "dog", "mag", "pag", "lik", "dem", "pid", "bab", "niy", "nuy", "dur", "van", "dub", "tud", "vig",
+     "mop", "meb", "tun", "pom", "bik", "kap", "gib", "bep", "hub", "ved", "nir", "mir", "ked", "tor", "hus", "gip",
+     "gur", "dib", "dey", "heg", "vip", "bif", "nik", "tis", "mup", "nop", "him", "dod", "vur", "pus", "mes", "vad",
+     "vod", "mum", "pap", "kis", "zom", "nef", "pes", "bob", "mun", "pep", "nun", "ner", "pot", "lib", "pod", "zok",
+     "pon", "lef", "bas", "bid", "hun", "giy", "pud", "goy", "beg", "hob", "boy", "zuf", "hom", "kef", "tog", "vay",
+     "kor", "kod", "pup", "duk", "laf", "bek", "pef", "lut", "bam", "dos", "ped", "ven", "kit", "mod", "pum", "gem",
+     "mip", "vor", "tid", "vum", "zep", "huf", "ley", "nam", "kim", "gab", "noy", "viy", "nup", "maf", "vis", "gup",
+     "hoy", "tuy", "nap", "nog", "vek", "tot", "dom", "nid", "tup", "lin", "kay", "tiy", "lid", "pay", "gag", "nom",
+     "gud", "pop", "kug", "gog", "dum", "vey", "zub", "tik", "veg", "per", "miy", "gub", "tap", "hig", "gar", "meg",
+     "tum", "kop", "dut", "deg", "dag", "bag", "ten", "vik", "ted", "din", "zem", "lis", "dap", "nas", "lim", "lor"]
 
-    ["ozo", "ivi", "eve", "eba", "uza", "ozu", "ivo", "evi", "ebe", "aba", "uba", "ivu", "evo", "ebi", "abe", "ube",
-     "iza", "evu", "ebo", "abi", "ubi", "ize", "eza", "ebu", "abo", "ubo", "izi", "eze", "eda", "abu", "ubu", "izo",
-     "ezi", "ede", "ada", "uda", "izu", "ezo", "edi", "ade", "ude", "oba", "ezu", "edo", "adi", "udi", "obe", "iba",
-     "edu", "ado", "udo", "obi", "ibe", "ega", "adu", "udu", "obo", "ibi", "ege", "aha", "uga", "obu", "ibo", "egi",
-     "ahe", "uge", "oha", "ibu", "ego", "ahi", "ugi", "ohe", "ida", "egu", "aho", "ugo", "ohi", "ide", "eha", "ahu",
-     "ugu", "oho", "idi", "ehe", "ala", "uha", "ohu", "ido", "ehi", "ale", "uhe", "ola", "idu", "eho", "ali", "uhi",
-     "ole", "iha", "ehu", "alo", "uho", "oli", "ihe", "eka", "alu", "uhu", "olo", "ihi", "eke", "ama", "ula", "olu",
-     "iho", "eki", "ame", "ule", "oma", "ihu", "eko", "ami", "uli", "ome", "ila", "eku", "amo", "ulo", "omi", "ile",
-     "ela", "amu", "ulu", "omo", "ili", "ele", "ana", "uma", "omu", "ilo", "eli", "ane", "ume", "ona", "ilu", "elo",
-     "ani", "umi", "one", "ima", "elu", "ano", "umo", "oni", "ime", "ema", "anu", "umu", "ono", "imi", "eme", "apa",
-     "una", "onu", "imo", "emi", "ape", "une", "opa", "imu", "emo", "api", "uni", "ope", "ina", "emu", "apo", "uno",
-     "opi", "ine", "ena", "apu", "unu", "opo", "ini", "ene", "ata", "upa", "opu", "ino", "eni", "ate", "upe", "ota",
-     "inu", "eno", "ati", "upi", "ote", "ipa", "enu", "ato", "upo", "oti", "ipe", "epa", "atu", "upu", "oto", "ipi",
-     "epe", "ava", "uta", "otu", "ipo", "epi", "ave", "ute", "ova", "ipu", "epo", "avi", "uti", "ove", "ita", "epu",
-     "avo", "uto", "ovi", "ite", "eta", "avu", "utu", "ovo", "iti", "ete", "aza", "uva", "ovu", "ito", "eti", "aze",
-     "uve", "oza", "itu", "eto", "azi", "uvi", "oze", "iva", "etu", "azo", "uvo", "ozi", "ive", "eva", "azu", "uvu"]
+    ["ozo", "emo", "ulu", "uvu", "ute", "epo", "eze", "ova", "ime", "uzo", "eli", "onu", "eba", "uge", "avi", "uho",
+     "ede", "oli", "ize", "ibu", "ahi", "oga", "uma", "ego", "azo", "eza", "uli", "ima", "ogu", "ugi", "izo", "ibo",
+     "ado", "otu", "egu", "apa", "eni", "uva", "utu", "edi", "ali", "ine", "ama", "ovo", "edo", "eha", "ava", "eto",
+     "ehe", "ovi", "ave", "one", "eku", "obo", "epi", "uni", "ebi", "ide", "ege", "edu", "uto", "unu", "udo", "ati",
+     "ita", "oba", "oto", "ame", "ibi", "ove", "ivu", "oha", "ipu", "egi", "ena", "apo", "ili", "uze", "eka", "ebu",
+     "ivi", "uta", "upo", "izu", "eme", "ila", "ani", "iho", "ota", "enu", "ilo", "oho", "opu", "ene", "ive", "ina",
+     "aba", "ato", "epa", "alu", "eno", "ehu", "ini", "ito", "apu", "ibe", "iba", "ubo", "ale", "uhi", "alo", "amo",
+     "upe", "inu", "elo", "obu", "ipo", "uvi", "olu", "ogi", "izi", "ope", "obe", "ugo", "ebe", "ovu", "ubi", "ata",
+     "abo", "umu", "aze", "eti", "iza", "imu", "ete", "ate", "ozi", "uga", "ano", "oni", "azi", "uza", "umo", "opo",
+     "ubu", "epe", "ugu", "ole", "ela", "imo", "ane", "epu", "ono", "eke", "ona", "evi", "ohi", "ega", "oge", "aha",
+     "avo", "ulo", "ilu", "une", "ema", "eho", "imi", "emi", "ula", "azu", "uzi", "ude", "ote", "ami", "ube", "ite",
+     "opa", "ehi", "ipi", "eki", "evo", "uda", "ebo", "ida", "ola", "ezo", "avu", "ipa", "abe", "iva", "atu", "itu",
+     "ihu", "eda", "ozu", "ino", "olo", "upu", "aho", "uhu", "api", "ahe", "oze", "opi", "eve", "idi", "ada", "uno",
+     "uve", "evu", "oti", "una", "uhe", "uvo", "uha", "aza", "ape", "ihe", "ade", "obi", "ule", "umi", "iti", "udi",
+     "ezu", "uba", "elu", "amu", "abu", "iha", "ile", "ahu", "ezi", "etu", "ume", "oza", "ana", "adi", "anu", "adu",
+     "ipe", "ala", "eta", "uti", "ogo", "eva", "upa", "eko", "ohu", "idu", "emu", "ido", "ohe", "abi", "ihi", "upi"]
 
-0 is still ~zod, but 256 is now ~ozozod. Which is not what we wanted, we wanted ~zodozo! Frig. Didn't realise this thing was big-endian.
+0 is still ~zod, but 256 is now ~ozozod. Which is not what we wanted, we wanted ~zodozo! Frig. Didn't realise this thing was big-endian. Looks like I'll have to learn some Hoon.
 
 Formatted for Hoon anyway:
 
     ++  po
       ~/  %po
       =+  :-  ^=  sis
-              'ozoivieveebauzaozuivoeviebeabaubaivuevoebiabeube\
-              /izaevueboabiubiizeezaebuabouboiziezeedaabuubuizo\
-              /eziedeadaudaizuezoediadeudeobaezuedoadiudiobeiba\
-              /eduadoudoobiibeegaaduuduoboibiegeahaugaobuiboegi\
-              /aheugeohaibuegoahiugioheidaeguahougoohiideehaahu\
-              /uguohoidiehealauhaohuidoehialeuheolaiduehoaliuhi\
-              /oleihaehualouhooliiheekaaluuhuoloihiekeamaulaolu\
-              /ihoekiameuleomaihuekoamiuliomeilaekuamouloomiile\
-              /elaamuuluomoilieleanaumaomuiloelianeumeonailuelo\
-              /aniumioneimaeluanoumooniimeemaanuumuonoimiemeapa\
-              /unaonuimoemiapeuneopaimuemoapiuniopeinaemuapouno\
-              /opiineenaapuunuopoinieneataupaopuinoeniateupeota\
-              /inuenoatiupioteipaenuatoupootiipeepaatuupuotoipi\
-              /epeavautaotuipoepiaveuteovaipuepoaviutioveitaepu\
-              /avoutooviiteetaavuutuovoitieteazauvaovuitoetiaze\
-              /uveozaituetoaziuviozeivaetuazouvooziiveevaazuuvu'
+              'ozoemouluuvuuteepoezeovaimeuzoelionuebaugeaviuho\
+              /edeoliizeibuahiogaumaegoazoezauliimaoguugiizoibo\
+              /adootueguapaeniuvautuedialiineamaovoedoehaavaeto\
+              /eheoviaveoneekuoboepiuniebiideegeeduutounuudoati\
+              /itaobaotoameibioveivuohaipuegienaapoiliuzeekaebu\
+              /iviutaupoizuemeilaaniihootaenuiloohoopueneiveina\
+              /abaatoepaaluenoehuiniitoapuibeibauboaleuhialoamo\
+              /upeinueloobuipouvioluogiiziopeobeugoebeovuubiata\
+              /aboumuazeetiizaimueteateoziugaanooniaziuzaumoopo\
+              /ubuepeuguoleelaimoaneepuonoekeonaeviohiegaogeaha\
+              /avouloiluuneemaehoimiemiulaazuuziudeoteamiubeite\
+              /opaehiipiekievoudaeboidaolaezoavuipaabeivaatuitu\
+              /ihuedaozuinooloupuahouhuapiaheozeopieveidiadauno\
+              /uveevuotiunauheuvouhaazaapeiheadeobiuleumiitiudi\
+              /ezuubaeluamuabuihaileahuezietuumeozaanaadianuadu\
+              /ipealaetautiogoevaupaekoohuiduemuidooheabiihiupi'
           ^=  dex
-          'zoddadhetdeyhordotkapgarbatginbirgumbunhegdekhod\
-          /doghuygadbaggeybidgotboyhardashindirhukdunkeggek\
-          /bengogbokhaddafheydibhosdoykargasbaygipbisgunbup\
-          /hekdemhofdokkabgafbakgibbifgoybubhasdathipdishum\
-          /dupkekgembepgokbomhafdaghibdidhotdubkasgatbebgir\
-          /bitgupburhemdenhogdomkadgagbamgidbiggubbudhatday\
-          /hirdithundurkemgenbergombonhagdakhiddifhoydudkat\
-          /gaybedgisbiygurbushendephokdonkafgakbangifbikgud\
-          /bufhaydebhisdiyhupduskengepbesgonbophakdamhifdig\
-          /hubdufkaygebbefgitbobgusbuthepderhomdopkaggambap\
-          /gigbimgufbughebdedhitdobhurdutbabgerbetgopborham\
-          /danhigdimhuddugkebgedbeggiybodgutbuyherdeshondor\
-          /kamganbargikbingugbukheddefhiydodhusduybadgesbey\
-          /gorboshandaphikdinhufdukkedgefbekgobbofguydabhes\
-          /dethopdoskangapbasgimbipgukbumhefdeghobdofhutgab\
-          /bafgetbibgosbothapdarhimdiphugdumkefgegbemgofbog'
+          'zodzesmikbofmudharpungomdakgebkunbefbuytosdarlob\
+          /lofpukvokzekbirkirvarzenkafgaddudbisnafdashagtir\
+          /petlifzipbonnifzimmurbumzeytarmabgushapzinmokgik\
+          /temmitpiynokleszibzudtugvoshakgobpinpughipvutkur\
+          /numpimhathonkiktesvupvatbiypemzitdafvifginzasdug\
+          /zirhetpankusnettodmaypathemkukdophekpofkinliphog\
+          /bodnepdogmagpaglikdempidbabniynuydurvandubtudvig\
+          /mopmebtunpombikkapgibbephubvednirmirkedtorhusgip\
+          /gurdibdeyhegvipbifniktismupnophimdodvurpusmesvad\
+          /vodmumpapkiszomnefpesbobmunpepnunnerpotlibpodzok\
+          /ponlefbasbidhungiypudgoybeghobboyzufhomkeftogvay\
+          /korkodpupduklafbekpeflutbamdospedvenkitmodpumgem\
+          /mipvortidvumzephufleynamkimgabnoyviynupmafvisgup\
+          /hoytuynapnogvektotdomnidtuplinkaytiylidpaygagnom\
+          /gudpopkuggogdumveyzubtikvegpermiygubtaphiggarmeg\
+          /tumkopdutdegdagbagtenvikteddinzemlisdapnaslimlor'
       |%
 
-#### Pruning/blacklist
+Anyway, to wrap up, here's a stack of sample ship names:
 
-There's no bulletproof way to do this with 2^16 potential three-syllable words, but the broadcasting standards authority in my country recently put out a [list of words people find most offensive](http://bsa.govt.nz/images/assets/Research/Acceptibility_of_Words_2013_WEB.pdf) (page 9), so I thought that was a good starting point.
+    ~deg
+    ~ted
+    ~gog
+    ~net
 
-#### Selection
+    ~zomezu
+    ~duralo
+    ~basidu
+    ~likivu
 
-Need to find a way of mapping a number from 0~255 to a number 0~720, and 0~300, starting with ~zod and ending with ~odo
+    ~biyazu-lipehu
+    ~gubuvu-hunule
+    ~napoto-vadobo
+    ~pofuti-mipinu
+
+    ~tesolo-kukulo-haguvi-honuda
+    ~kinova-tumebo-honahe-nupipa
+    ~tedenu-hubabi-bifedi-pinoha
+    ~guruma-zomubo-demano-lafuda
+    
+    ~vorado-zibole-totila-hakuho--gupimo-doduto-pofela-varavu
+    ~potuta-boduve-vayunu-begobu--dakume-gomini-pusegu-gudonu
+    ~zomeda-lisalu-kuruti-lesamu--bagune-kefemu-vatado-pusedu
+    ~mabihu-gadadu-kurobo-kodani--bamala-tesitu-giyibu-pofobe
 
 ## Proposal B:
 
