@@ -1,4 +1,4 @@
-### Research:
+## Research:
 
 I've looked into what letters correspond to what phonemes by language (or the romanisation of that language). I looked at the ten languages with the highest number of internet users, plus Hindi, because I felt like it. ([googdoc](https://docs.google.com/spreadsheet/ccc?key=0AoF7JCDAQNZCdDZrNmJid0owRnRGUDRCR3NreXZ1cHc&usp=sharing))
 
@@ -12,7 +12,7 @@ From this I believe we can select a set of letters and letter pairs which are re
     vowels            a, e, i, o, u
     other weird shit  h, y
 
-### Proposal A:
+## Proposal A:
 
 This system uses CVC and VCV for alternating bytes. The disadvantage is that we now have three syllables per two-byte address. The advantage is that we avoid having to avoid bad-sounding consonant clusters altogether.
 
@@ -47,9 +47,9 @@ I generated some addresses of different lengths, selecting syllables randomly. (
     ~nuzoyo-dipude-novuvi-surata
     ~sagoyu-tukivo-torebe-dutuzo--dimetu-timepo-kataza-dezuma
 
-Sounds kinda Polynesian huh? Here's a list of syllables. ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-syllables.rb))
+Sounds kinda Polynesian huh?
 
-This generates a good screenful of text to work with:
+Here's a list of combinations: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-syllables.rb))
 
     CVC (720 combinations):
     ["bab", "bad", "bag", "bak", "bam", "ban", "bap", "bar", "bat", "bav", "bay", "baz", "beb", "bed", "beg", "bek",
@@ -125,16 +125,16 @@ There's no bulletproof way to do this with 2^16 potential three-syllable words, 
 
 
 
-### Proposal B:
+## Proposal B:
 
 Hand-tuned CVCCVC. Need to do directional graph of good consonant combinations. Retain ~zod. Perhaps look at inverting secondary numbers? ~dozzod etc.
 
-### Proposal C:
+## Proposal C:
 
 Complex tuned 1 syllable per 16-bit number system. Work in progress/stillborn.
 
 
-### Relevant links:
+## Relevant links:
 
 Urbit phonetic base discussion thread:
 
