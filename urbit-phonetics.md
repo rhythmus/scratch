@@ -39,7 +39,7 @@ IPA is simple:
 
 #### Moving on:
 
-I generated some addresses of different lengths, selecting syllables randomly. ([code](https://github.com/dclelland/scratch/blob/master/urbit-phonetics.rb))
+I generated some addresses of different lengths, selecting syllables randomly. ([code](https://github.com/dclelland/scratch/blob/master/urbit-phonetics-a.rb))
 
     ~zek
     ~honape
