@@ -22,7 +22,7 @@ This system uses CVC and VCV for alternating bytes. The disadvantage is that we 
 
 A single byte follows the pattern onset-nucleus-coda and a double-byte word follows the pattern onset-nucleus-coda-nucleus-onset-nucleus. Note the pairs f/v, s/z, and l/r, h/y - this is to avoid ambiguous pronunciations.
 
-Mnemnion, I'm sorry, I have to use the letter e - a VCV group would only have 192 combinations if we only used a, i, o, and u as per your proposal.
+Mnemnion, I'm sorry, I have to use the letter e - a VCV group would only have 192 combinations if we only used a, i, o, and u.
 
 #### MORE DETAILS PLEASE
 
@@ -49,75 +49,43 @@ I generated some addresses of different lengths, selecting syllables randomly. (
 
 Sounds kinda Polynesian huh?
 
-Here's a list of combinations: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-syllables.rb))
+I generate the full set of combinations, trim some potentially offensive, then pick syllables psuedorandomly: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-syllables.rb))
 
-    Dextra (720 combinations):
-    ["bab", "bad", "baf", "bag", "bak", "bam", "ban", "bap", "bar", "bas", "bat", "bay", "beb", "bed", "bef", "beg",
-     "bek", "bem", "ben", "bep", "ber", "bes", "bet", "bey", "bib", "bid", "bif", "big", "bik", "bim", "bin", "bip",
-     "bir", "bis", "bit", "biy", "bob", "bod", "bof", "bog", "bok", "bom", "bon", "bop", "bor", "bos", "bot", "boy",
-     "bub", "bud", "buf", "bug", "buk", "bum", "bun", "bup", "bur", "bus", "but", "buy", "dab", "dad", "daf", "dag",
-     "dak", "dam", "dan", "dap", "dar", "das", "dat", "day", "deb", "ded", "def", "deg", "dek", "dem", "den", "dep",
-     "der", "des", "det", "dey", "dib", "did", "dif", "dig", "dik", "dim", "din", "dip", "dir", "dis", "dit", "diy",
-     "dob", "dod", "dof", "dog", "dok", "dom", "don", "dop", "dor", "dos", "dot", "doy", "dub", "dud", "duf", "dug",
-     "duk", "dum", "dun", "dup", "dur", "dus", "dut", "duy", "gab", "gad", "gaf", "gag", "gak", "gam", "gan", "gap",
-     "gar", "gas", "gat", "gay", "geb", "ged", "gef", "geg", "gek", "gem", "gen", "gep", "ger", "ges", "get", "gey",
-     "gib", "gid", "gif", "gig", "gik", "gim", "gin", "gip", "gir", "gis", "git", "giy", "gob", "god", "gof", "gog",
-     "gok", "gom", "gon", "gop", "gor", "gos", "got", "goy", "gub", "gud", "guf", "gug", "guk", "gum", "gun", "gup",
-     "gur", "gus", "gut", "guy", "hab", "had", "haf", "hag", "hak", "ham", "han", "hap", "har", "has", "hat", "hay",
-     "heb", "hed", "hef", "heg", "hek", "hem", "hen", "hep", "her", "hes", "het", "hey", "hib", "hid", "hif", "hig",
-     "hik", "him", "hin", "hip", "hir", "his", "hit", "hiy", "hob", "hod", "hof", "hog", "hok", "hom", "hon", "hop",
-     "hor", "hos", "hot", "hoy", "hub", "hud", "huf", "hug", "huk", "hum", "hun", "hup", "hur", "hus", "hut", "huy",
-     "kab", "kad", "kaf", "kag", "kak", "kam", "kan", "kap", "kar", "kas", "kat", "kay", "keb", "ked", "kef", "keg",
-     "kek", "kem", "ken", "kep", "ker", "kes", "ket", "key", "kib", "kid", "kif", "kig", "kik", "kim", "kin", "kip",
-     "kir", "kis", "kit", "kiy", "kob", "kod", "kof", "kog", "kok", "kom", "kon", "kop", "kor", "kos", "kot", "koy",
-     "kub", "kud", "kuf", "kug", "kuk", "kum", "kun", "kup", "kur", "kus", "kut", "kuy", "lab", "lad", "laf", "lag",
-     "lak", "lam", "lan", "lap", "lar", "las", "lat", "lay", "leb", "led", "lef", "leg", "lek", "lem", "len", "lep",
-     "ler", "les", "let", "ley", "lib", "lid", "lif", "lig", "lik", "lim", "lin", "lip", "lir", "lis", "lit", "liy",
-     "lob", "lod", "lof", "log", "lok", "lom", "lon", "lop", "lor", "los", "lot", "loy", "lub", "lud", "luf", "lug",
-     "luk", "lum", "lun", "lup", "lur", "lus", "lut", "luy", "mab", "mad", "maf", "mag", "mak", "mam", "man", "map",
-     "mar", "mas", "mat", "may", "meb", "med", "mef", "meg", "mek", "mem", "men", "mep", "mer", "mes", "met", "mey",
-     "mib", "mid", "mif", "mig", "mik", "mim", "min", "mip", "mir", "mis", "mit", "miy", "mob", "mod", "mof", "mog",
-     "mok", "mom", "mon", "mop", "mor", "mos", "mot", "moy", "mub", "mud", "muf", "mug", "muk", "mum", "mun", "mup",
-     "mur", "mus", "mut", "muy", "nab", "nad", "naf", "nag", "nak", "nam", "nan", "nap", "nar", "nas", "nat", "nay",
-     "neb", "ned", "nef", "neg", "nek", "nem", "nen", "nep", "ner", "nes", "net", "ney", "nib", "nid", "nif", "nig",
-     "nik", "nim", "nin", "nip", "nir", "nis", "nit", "niy", "nob", "nod", "nof", "nog", "nok", "nom", "non", "nop",
-     "nor", "nos", "not", "noy", "nub", "nud", "nuf", "nug", "nuk", "num", "nun", "nup", "nur", "nus", "nut", "nuy",
-     "pab", "pad", "paf", "pag", "pak", "pam", "pan", "pap", "par", "pas", "pat", "pay", "peb", "ped", "pef", "peg",
-     "pek", "pem", "pen", "pep", "per", "pes", "pet", "pey", "pib", "pid", "pif", "pig", "pik", "pim", "pin", "pip",
-     "pir", "pis", "pit", "piy", "pob", "pod", "pof", "pog", "pok", "pom", "pon", "pop", "por", "pos", "pot", "poy",
-     "pub", "pud", "puf", "pug", "puk", "pum", "pun", "pup", "pur", "pus", "put", "puy", "tab", "tad", "taf", "tag",
-     "tak", "tam", "tan", "tap", "tar", "tas", "tat", "tay", "teb", "ted", "tef", "teg", "tek", "tem", "ten", "tep",
-     "ter", "tes", "tet", "tey", "tib", "tid", "tif", "tig", "tik", "tim", "tin", "tip", "tir", "tis", "tit", "tiy",
-     "tob", "tod", "tof", "tog", "tok", "tom", "ton", "top", "tor", "tos", "tot", "toy", "tub", "tud", "tuf", "tug",
-     "tuk", "tum", "tun", "tup", "tur", "tus", "tut", "tuy", "vab", "vad", "vaf", "vag", "vak", "vam", "van", "vap",
-     "var", "vas", "vat", "vay", "veb", "ved", "vef", "veg", "vek", "vem", "ven", "vep", "ver", "ves", "vet", "vey",
-     "vib", "vid", "vif", "vig", "vik", "vim", "vin", "vip", "vir", "vis", "vit", "viy", "vob", "vod", "vof", "vog",
-     "vok", "vom", "von", "vop", "vor", "vos", "vot", "voy", "vub", "vud", "vuf", "vug", "vuk", "vum", "vun", "vup",
-     "vur", "vus", "vut", "vuy", "zab", "zad", "zaf", "zag", "zak", "zam", "zan", "zap", "zar", "zas", "zat", "zay",
-     "zeb", "zed", "zef", "zeg", "zek", "zem", "zen", "zep", "zer", "zes", "zet", "zey", "zib", "zid", "zif", "zig",
-     "zik", "zim", "zin", "zip", "zir", "zis", "zit", "ziy", "zob", "zod", "zof", "zog", "zok", "zom", "zon", "zop",
-     "zor", "zos", "zot", "zoy", "zub", "zud", "zuf", "zug", "zuk", "zum", "zun", "zup", "zur", "zus", "zut", "zuy"]
+    ["zod", "dad", "het", "dey", "hor", "dot", "kap", "gar", "bat", "gin", "bir", "gum", "bun", "heg", "dek", "hod",
+     "dog", "huy", "gad", "bag", "gey", "bid", "got", "boy", "har", "das", "hin", "dir", "huk", "dun", "keg", "gek",
+     "ben", "gog", "bok", "had", "daf", "hey", "dib", "hos", "doy", "kar", "gas", "bay", "gip", "bis", "gun", "bup",
+     "hek", "dem", "hof", "dok", "kab", "gaf", "bak", "gib", "bif", "goy", "bub", "has", "dat", "hip", "dis", "hum",
+     "dup", "kek", "gem", "bep", "gok", "bom", "haf", "dag", "hib", "did", "hot", "dub", "kas", "gat", "beb", "gir",
+     "bit", "gup", "bur", "hem", "den", "hog", "dom", "kad", "gag", "bam", "gid", "big", "gub", "bud", "hat", "day",
+     "hir", "dit", "hun", "dur", "kem", "gen", "ber", "gom", "bon", "hag", "dak", "hid", "dif", "hoy", "dud", "kat",
+     "gay", "bed", "gis", "biy", "gur", "bus", "hen", "dep", "hok", "don", "kaf", "gak", "ban", "gif", "bik", "gud",
+     "buf", "hay", "deb", "his", "diy", "hup", "dus", "ken", "gep", "bes", "gon", "bop", "hak", "dam", "hif", "dig",
+     "hub", "duf", "kay", "geb", "bef", "git", "bob", "gus", "but", "hep", "der", "hom", "dop", "kag", "gam", "bap",
+     "gig", "bim", "guf", "bug", "heb", "ded", "hit", "dob", "hur", "dut", "bab", "ger", "bet", "gop", "bor", "ham",
+     "dan", "hig", "dim", "hud", "dug", "keb", "ged", "beg", "giy", "bod", "gut", "buy", "her", "des", "hon", "dor",
+     "kam", "gan", "bar", "gik", "bin", "gug", "buk", "hed", "def", "hiy", "dod", "hus", "duy", "bad", "ges", "bey",
+     "gor", "bos", "han", "dap", "hik", "din", "huf", "duk", "ked", "gef", "bek", "gob", "bof", "guy", "dab", "hes",
+     "det", "hop", "dos", "kan", "gap", "bas", "gim", "bip", "guk", "bum", "hef", "deg", "hob", "dof", "hut", "gab",
+     "baf", "get", "bib", "gos", "bot", "hap", "dar", "him", "dip", "hug", "dum", "kef", "geg", "bem", "gof", "bog"]
 
-    Sinistra (300 combinations):
-    ["aba", "abe", "abi", "abo", "abu", "ada", "ade", "adi", "ado", "adu", "aga", "age", "agi", "ago", "agu", "aha",
-     "ahe", "ahi", "aho", "ahu", "aka", "ake", "aki", "ako", "aku", "ala", "ale", "ali", "alo", "alu", "ama", "ame",
-     "ami", "amo", "amu", "ana", "ane", "ani", "ano", "anu", "apa", "ape", "api", "apo", "apu", "ata", "ate", "ati",
-     "ato", "atu", "ava", "ave", "avi", "avo", "avu", "aza", "aze", "azi", "azo", "azu", "eba", "ebe", "ebi", "ebo",
-     "ebu", "eda", "ede", "edi", "edo", "edu", "ega", "ege", "egi", "ego", "egu", "eha", "ehe", "ehi", "eho", "ehu",
-     "eka", "eke", "eki", "eko", "eku", "ela", "ele", "eli", "elo", "elu", "ema", "eme", "emi", "emo", "emu", "ena",
-     "ene", "eni", "eno", "enu", "epa", "epe", "epi", "epo", "epu", "eta", "ete", "eti", "eto", "etu", "eva", "eve",
-     "evi", "evo", "evu", "eza", "eze", "ezi", "ezo", "ezu", "iba", "ibe", "ibi", "ibo", "ibu", "ida", "ide", "idi",
-     "ido", "idu", "iga", "ige", "igi", "igo", "igu", "iha", "ihe", "ihi", "iho", "ihu", "ika", "ike", "iki", "iko",
-     "iku", "ila", "ile", "ili", "ilo", "ilu", "ima", "ime", "imi", "imo", "imu", "ina", "ine", "ini", "ino", "inu",
-     "ipa", "ipe", "ipi", "ipo", "ipu", "ita", "ite", "iti", "ito", "itu", "iva", "ive", "ivi", "ivo", "ivu", "iza",
-     "ize", "izi", "izo", "izu", "oba", "obe", "obi", "obo", "obu", "oda", "ode", "odi", "odo", "odu", "oga", "oge",
-     "ogi", "ogo", "ogu", "oha", "ohe", "ohi", "oho", "ohu", "oka", "oke", "oki", "oko", "oku", "ola", "ole", "oli",
-     "olo", "olu", "oma", "ome", "omi", "omo", "omu", "ona", "one", "oni", "ono", "onu", "opa", "ope", "opi", "opo",
-     "opu", "ota", "ote", "oti", "oto", "otu", "ova", "ove", "ovi", "ovo", "ovu", "oza", "oze", "ozi", "ozo", "ozu",
-     "uba", "ube", "ubi", "ubo", "ubu", "uda", "ude", "udi", "udo", "udu", "uga", "uge", "ugi", "ugo", "ugu", "uha",
-     "uhe", "uhi", "uho", "uhu", "uka", "uke", "uki", "uko", "uku", "ula", "ule", "uli", "ulo", "ulu", "uma", "ume",
-     "umi", "umo", "umu", "una", "une", "uni", "uno", "unu", "upa", "upe", "upi", "upo", "upu", "uta", "ute", "uti",
-     "uto", "utu", "uva", "uve", "uvi", "uvo", "uvu", "uza", "uze", "uzi", "uzo", "uzu"]
+    ["ozo", "ivi", "eve", "eba", "uza", "ozu", "ivo", "evi", "ebe", "aba", "uba", "ivu", "evo", "ebi", "abe", "ube",
+     "iza", "evu", "ebo", "abi", "ubi", "ize", "eza", "ebu", "abo", "ubo", "izi", "eze", "eda", "abu", "ubu", "izo",
+     "ezi", "ede", "ada", "uda", "izu", "ezo", "edi", "ade", "ude", "oba", "ezu", "edo", "adi", "udi", "obe", "iba",
+     "edu", "ado", "udo", "obi", "ibe", "ega", "adu", "udu", "obo", "ibi", "ege", "aha", "uga", "obu", "ibo", "egi",
+     "ahe", "uge", "oha", "ibu", "ego", "ahi", "ugi", "ohe", "ida", "egu", "aho", "ugo", "ohi", "ide", "eha", "ahu",
+     "ugu", "oho", "idi", "ehe", "ala", "uha", "ohu", "ido", "ehi", "ale", "uhe", "ola", "idu", "eho", "ali", "uhi",
+     "ole", "iha", "ehu", "alo", "uho", "oli", "ihe", "eka", "alu", "uhu", "olo", "ihi", "eke", "ama", "ula", "olu",
+     "iho", "eki", "ame", "ule", "oma", "ihu", "eko", "ami", "uli", "ome", "ila", "eku", "amo", "ulo", "omi", "ile",
+     "ela", "amu", "ulu", "omo", "ili", "ele", "ana", "uma", "omu", "ilo", "eli", "ane", "ume", "ona", "ilu", "elo",
+     "ani", "umi", "one", "ima", "elu", "ano", "umo", "oni", "ime", "ema", "anu", "umu", "ono", "imi", "eme", "apa",
+     "una", "onu", "imo", "emi", "ape", "une", "opa", "imu", "emo", "api", "uni", "ope", "ina", "emu", "apo", "uno",
+     "opi", "ine", "ena", "apu", "unu", "opo", "ini", "ene", "ata", "upa", "opu", "ino", "eni", "ate", "upe", "ota",
+     "inu", "eno", "ati", "upi", "ote", "ipa", "enu", "ato", "upo", "oti", "ipe", "epa", "atu", "upu", "oto", "ipi",
+     "epe", "ava", "uta", "otu", "ipo", "epi", "ave", "ute", "ova", "ipu", "epo", "avi", "uti", "ove", "ita", "epu",
+     "avo", "uto", "ovi", "ite", "eta", "avu", "utu", "ovo", "iti", "ete", "aza", "uva", "ovu", "ito", "eti", "aze",
+     "uve", "oza", "itu", "eto", "azi", "uvi", "oze", "iva", "etu", "azo", "uvo", "ozi", "ive", "eva", "azu", "uvu"]
+
+0 is still ~zod, but 256 is now ~ozozod. Which is not what we wanted, we wanted ~zodozo! Frig.
 
 #### Pruning/blacklist
 

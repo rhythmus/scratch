@@ -14,25 +14,11 @@ def random_word
   "#{random_cvc}#{random_vcv}"
 end
 
-def carrier
-  "~#{random_cvc}"
-end
-
-def cruiser
-  "~#{random_word}"
-end
-
-def destroyer
-  "~#{random_word}-#{random_word}"
-end
-
-def yacht
-  "~#{random_word}-#{random_word}-#{random_word}-#{random_word}"
-end
-
-def submarine
-  "~#{random_word}-#{random_word}-#{random_word}-#{random_word}--#{random_word}-#{random_word}-#{random_word}-#{random_word}"
-end
+carrier = "~#{random_cvc}"
+cruiser = "~#{random_word}"
+destroyer = "~#{random_word}-#{random_word}"
+yacht = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}"
+submarine = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}--#{random_word}-#{random_word}-#{random_word}-#{random_word}"
 
 puts carrier
 puts cruiser
