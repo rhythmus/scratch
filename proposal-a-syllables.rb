@@ -1,6 +1,6 @@
-@onsets = %w(p t k b d g m n f s h l)
-@nucleii = %w(a e i o u)
-@codas = %w(p t k b d g m n v z y r)
+@onsets = %w(p t k b d g m n f s h l).sort
+@nucleii = %w(a e i o u).sort
+@codas = %w(p t k b d g m n v z y r).sort
 
 def oddbytes
   oddbytes = []
