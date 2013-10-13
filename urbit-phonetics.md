@@ -39,7 +39,7 @@ IPA is simple:
 
 #### Moving on:
 
-I generated some addresses of different lengths, selecting syllables randomly. ([code](https://github.com/dclelland/scratch/blob/master/proposal-a.rb))
+I generated some addresses of different lengths, selecting syllables randomly. ([code](https://github.com/dclelland/scratch/blob/master/urbit-phonetics.rb))
 
     ~zek
     ~honape
@@ -55,7 +55,7 @@ I generated some addresses of different lengths, selecting syllables randomly. (
 
 Sounds kinda Polynesian huh?
 
-I generate the full set of combinations, trim some that are potentially offensive, then pick syllables psuedorandomly: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a.rb))
+I generated the full set of combinations, trimmed some that are potentially offensive, then picked syllables psuedorandomly:
 
     ["zod", "zes", "mik", "bof", "mud", "har", "pun", "gom", "dak", "geb", "kun", "bef", "buy", "tos", "dar", "lob",
      "lof", "puk", "vok", "zek", "bir", "kir", "var", "zen", "kaf", "gad", "dud", "bis", "naf", "das", "hag", "tir",
