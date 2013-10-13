@@ -29,7 +29,13 @@ Mnemnion, I'm sorry, I have to use the letter e - a VCV group would only have 19
 - f/v: In this instance I have simply paired /f/ (the voiceless labiodental fricative) with its voiced counterpart, /v/. I am tempted to drop this altogether, as so many languages have massive trouble with /v/. Japanese speakers tend to turn it into a /b/, rather than an /f/, for instance.
 - s/z: I have done the same here - /z/ is simply /s/'s voiced counterpart. Romance languages (English too) tend to turn /s/ into /z/ often, so I have relegated /z/ to onsets and /s/ to codas.
 - h/y: I doubt these two letters will ever be confused with one another but it felt aesthetically *right* to keep /h/ at the start and /j/ in the middle of the word.
-- l/r: Me so solly.
+- l/r: For our Japanese friends.
+
+IPA is simple:
+
+    p  /p/   b  /b/   m  /m/   f/v  /f~v/   h  /h/   l/r  /l~r/
+    t  /t/   d  /d/   n  /n/   s/z  /s~z/   y  /j/
+    k  /k/   g  /g/
 
 #### Moving on:
 
@@ -85,9 +91,9 @@ I generate the full set of combinations, trim some that are potentially offensiv
      "ezu", "uba", "elu", "amu", "abu", "iha", "ile", "ahu", "ezi", "etu", "ume", "oza", "ana", "adi", "anu", "adu",
      "ipe", "ala", "eta", "uti", "ogo", "eva", "upa", "eko", "ohu", "idu", "emu", "ido", "ohe", "abi", "ihi", "upi"]
 
-0 is still ~zod, but 256 is now ~ozozod. Which is not what we wanted, we wanted ~zodozo! Frig. Didn't realise this thing was big-endian. Looks like I'll have to learn some Hoon.
+0 is still ~zod, but 256 is now ~ozozod. Which is not what we wanted, we wanted ~zodozo! Frig. Didn't realise this thing was big-endian.
 
-Formatted for Hoon anyway:
+Pre formatted anyway, I'll have to learn me some Hoon later:
 
     ++  po
       ~/  %po
@@ -148,7 +154,7 @@ Anyway, to wrap up, here's a stack of sample ship names:
     ~kinova-tumebo-honahe-nupipa
     ~tedenu-hubabi-bifedi-pinoha
     ~guruma-zomubo-demano-lafuda
-    
+
     ~vorado-zibole-totila-hakuho--gupimo-doduto-pofela-varavu
     ~potuta-boduve-vayunu-begobu--dakume-gomini-pusegu-gudonu
     ~zomeda-lisalu-kuruti-lesamu--bagune-kefemu-vatado-pusedu
@@ -156,11 +162,11 @@ Anyway, to wrap up, here's a stack of sample ship names:
 
 ## Proposal B:
 
-Hand-tuned CVCCVC. Need to do directional graph of good consonant combinations. Retain ~zod. Perhaps look at inverting secondary numbers? ~dozzod etc.
+WIP, will probably be extensively hand-tuned CVCCVC
 
 ## Proposal C:
 
-Complex tuned 1 syllable per 16-bit number system. Work in progress/stillborn.
+WIP, will investigate a more fluid structure.
 
 
 ## Relevant links:
