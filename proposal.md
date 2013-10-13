@@ -1,8 +1,8 @@
 ## Research:
 
-I've looked into what letters correspond to what phonemes by language (or the romanisation of that language). I looked at the ten languages with the highest number of internet users, plus Hindi, because I felt like it. (This [googdoc](https://docs.google.com/spreadsheet/ccc?key=0AoF7JCDAQNZCdDZrNmJid0owRnRGUDRCR3NreXZ1cHc&usp=sharing) should make it easy to see which letters are cool and which are a total write-off)
+I've looked into what letters correspond to what phonemes by language (or the romanisation of that language). I looked at the ten languages with the highest number of internet users, plus Hindi, because I felt like it.
 
-From this I believe we can select a set of letters and letter pairs which are relatively unambiguous in their pronunciation across a wide range of languages:
+[This spreadsheet](https://docs.google.com/spreadsheet/ccc?key=0AoF7JCDAQNZCdDZrNmJid0owRnRGUDRCR3NreXZ1cHc&usp=sharing) should make it easy to see which letters are cool and which are a total write-off. From that I have selected a set of letters and letter pairs whose pronunciation remains relatively stable across a wide range of languages:
 
     unvoiced stops    p, t, k
     voiced stops      b, d, g
