@@ -2,29 +2,34 @@
 @nucleii = %w(a e i o u).sort
 @codas = %w(p t k b d g m n v z y r).sort
 
-def oddbytes
-  oddbytes = []
+def odd_bytes
+  odd_bytes = []
   @onsets.each do |onset|
     @nucleii.each do |nucleus|
       @codas.each do |coda|
-        oddbytes.push "#{onset}#{nucleus}#{coda}"
+        odd_bytes.push "#{onset}#{nucleus}#{coda}"
       end
     end
   end
-  oddbytes
+  odd_bytes
 end
 
-def evenbytes
-  evenbytes = []
+def even_bytes
+  even_bytes = []
   @nucleii.each do |nucleusA|
     @codas.each do |coda|
       @nucleii.each do |nucleusB|
-        evenbytes.push "#{nucleusA}#{coda}#{nucleusB}"
+        even_bytes.push "#{nucleusA}#{coda}#{nucleusB}"
       end
     end
   end
-  evenbytes
+  even_bytes
 end
 
-puts oddbytes.to_s
-puts evenbytes.to_s
+def selected_odd_bytes
+  # start with zod
+end
+
+def selected_even_bytes
+  # start with odo
+end
