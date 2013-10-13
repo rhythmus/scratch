@@ -51,7 +51,7 @@ Sounds kinda Polynesian huh?
 
 Here's a list of combinations: ([code](https://github.com/dclelland/scratch/blob/master/proposal-a-syllables.rb))
 
-    CVC (720 combinations):
+    Dextra (720 combinations):
     ["bab", "bad", "baf", "bag", "bak", "bam", "ban", "bap", "bar", "bas", "bat", "bay", "beb", "bed", "bef", "beg",
      "bek", "bem", "ben", "bep", "ber", "bes", "bet", "bey", "bib", "bid", "bif", "big", "bik", "bim", "bin", "bip",
      "bir", "bis", "bit", "biy", "bob", "bod", "bof", "bog", "bok", "bom", "bon", "bop", "bor", "bos", "bot", "boy",
@@ -98,7 +98,7 @@ Here's a list of combinations: ([code](https://github.com/dclelland/scratch/blob
      "zik", "zim", "zin", "zip", "zir", "zis", "zit", "ziy", "zob", "zod", "zof", "zog", "zok", "zom", "zon", "zop",
      "zor", "zos", "zot", "zoy", "zub", "zud", "zuf", "zug", "zuk", "zum", "zun", "zup", "zur", "zus", "zut", "zuy"]
 
-    VCV (300 combinations):
+    Sinistra (300 combinations):
     ["aba", "abe", "abi", "abo", "abu", "ada", "ade", "adi", "ado", "adu", "aga", "age", "agi", "ago", "agu", "aha",
      "ahe", "ahi", "aho", "ahu", "aka", "ake", "aki", "ako", "aku", "ala", "ale", "ali", "alo", "alu", "ama", "ame",
      "ami", "amo", "amu", "ana", "ane", "ani", "ano", "anu", "apa", "ape", "api", "apo", "apu", "ata", "ate", "ati",

@@ -2,29 +2,49 @@
 @nucleii = %w(a e i o u).sort
 @codas = %w(p t k b d g m n f s y r).sort
 
-def odd_bytes
-  odd_bytes = []
+def dextra_set
+  dextra_set = []
   @onsets.each do |onset|
     @nucleii.each do |nucleus|
       @codas.each do |coda|
-        odd_bytes.push "#{onset}#{nucleus}#{coda}"
+        dextra_set.push "#{onset}#{nucleus}#{coda}"
       end
     end
   end
-  odd_bytes
+  dextra_set
 end
 
-def even_bytes
-  even_bytes = []
+def sinistra_set
+  sinistra_set = []
   @nucleii.each do |nucleusA|
     @onsets.each do |onset|
       @nucleii.each do |nucleusB|
-        even_bytes.push "#{nucleusA}#{onset}#{nucleusB}"
+        sinistra_set.push "#{nucleusA}#{onset}#{nucleusB}"
       end
     end
   end
-  even_bytes
+  sinistra_set
 end
 
-puts odd_bytes.to_s
-puts even_bytes.to_s
+def dextra
+  dextra = []
+  index = dextra_set.index('zod')
+  256.times do
+    dextra.push dextra_set[index]
+    index = (index + 13) % 256
+  end
+  dextra
+end
+
+def sinistra
+  sinistra = []
+  index = sinistra_set.index('ozo')
+  256.times do
+    sinistra.push sinistra_set[index]
+    index = (index + 13) % 256
+  end
+  sinistra
+end
+
+puts dextra.to_s
+puts sinistra.to_s
