@@ -63,6 +63,8 @@ Good to go! Let's generate some fake ship names to test (of course, we can't do 
 
 Sounds good to me. Now, just to find a solid mathematical mapping...
 
+
+
 We wind up with four grids of consonants:
 
 Perhaps the matched vowel/nonvowel consonants can serve as a kind of checksum, or as a clue as to whether the number is odd or even?
