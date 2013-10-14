@@ -1,4 +1,6 @@
-## Research:
+## Proposal A
+
+#### Research:
 
 I've looked into what letters correspond to what phonemes by language (or the romanisation of that language). I looked at the ten languages with the highest number of internet users, plus Hindi, because I felt like it.
 
@@ -11,8 +13,6 @@ I've looked into what letters correspond to what phonemes by language (or the ro
     liquids           l/r
     vowels            a, e, i, o, u
     other weird shit  h, y
-
-## Proposal A:
 
 This system uses CVC and VCV for alternating bytes. The disadvantage is that we now have three syllables per two-byte address. The advantage is that we avoid having to avoid bad-sounding consonant clusters altogether.
 
@@ -159,15 +159,6 @@ Anyway, to wrap up, here's a stack of sample ship names:
     ~potuta-boduve-vayunu-begobu--dakume-gomini-pusegu-gudonu
     ~zomeda-lisalu-kuruti-lesamu--bagune-kefemu-vatado-pusedu
     ~mabihu-gadadu-kurobo-kodani--bamala-tesitu-giyibu-pofobe
-
-## Proposal B:
-
-WIP, will probably be extensively hand-tuned CVCCVC
-
-## Proposal C:
-
-WIP, will investigate a more fluid structure.
-
 
 ## Relevant links:
 
