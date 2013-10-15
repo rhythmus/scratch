@@ -38,14 +38,14 @@ end
 
 # 3. Blacklist
 
-@blacklist = %w(nig nog dik fuk fok fag kak kok pis god vag vom)
+@blacklist = %w(nig nog dik fuk fok fag gay gey kak kok pis god vag vom kum pig fat)
 
-256.times do |index|
-  if @blacklist.include? @sinistra_even[index] or @blacklist.include? @sinistra_odd[index]
+max_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, @dextra_odd.length].max
+
+max_length.times do |index|
+  if @blacklist.include? @sinistra_even[index] or @blacklist.include? @sinistra_odd[index] or @blacklist.include? @dextra_even[index] or @blacklist.include? @dextra_odd[index]
     @sinistra_even.delete_at index
     @sinistra_odd.delete_at index
-  end
-  if @blacklist.include? @dextra_even[index] or @blacklist.include? @dextra_odd[index]
     @dextra_even.delete_at index
     @dextra_odd.delete_at index
   end
@@ -55,10 +55,10 @@ end
 
 srand(1997) # skynet becomes self-aware
 
-max_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, @dextra_odd.length].min
+min_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, @dextra_odd.length].min
 zod_index = @dextra_even.index "zod"
 
-slice = (0..max_length).to_a.shuffle!
+slice = (0..min_length).to_a.shuffle!
 slice.delete zod_index
 slice.insert 0, zod_index
 
@@ -126,9 +126,7 @@ puts destroyer
 puts yacht
 puts submarine
 
-# List numbers
-
-512.times do |index|
+513.times do |index|
   if index < 256
     puts eight_bit_word(index)
   else
