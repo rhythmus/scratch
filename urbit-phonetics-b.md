@@ -79,7 +79,7 @@ The one drawback is that while this approach successfully avoids bad consonant c
 
 ([Here's the code.](https://github.com/dclelland/scratch/blob/master/urbit-phonetics-b.rb))
 
-Syllable tables:
+Syllable tables: (I just spotted the syllable 'fuk' in there. Evidently my blacklister needs work. Ho hum.)
 
     Even Sinistra
     doz taz lon zuv kar fuz nar pan lan fig gun gab hoz ped gir deb
