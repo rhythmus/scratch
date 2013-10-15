@@ -218,7 +218,7 @@ Numbers 0-512:
     ~libzat ~humsat ~bivzat ~laksat ~hebzat ~bolsat ~doznor
 
 
-The **second** approach is to select letters one by one, as if from a branching tree diagram. This is perhaps best illustrated in code:
+The **second** approach is to branch and select letters one by one. This is perhaps best illustrated in code:
 
     @initials = %w(p t k b d g m n f z l h)
     @vowels = %w(a e i o u)
@@ -243,4 +243,4 @@ The **second** approach is to select letters one by one, as if from a branching 
 
 In this instance, the #sample method picks a random element from an array. I have not yet figured out a good way of turning the value into an index to be chosen from each array.
 
-This approach, while avoiding doubled consonants, has the disadvantage of not being able to support a blacklist (easily). If anyone knows what they're doing here, please do get in touch. 
+This approach, while avoiding doubled consonants, has the disadvantage of not being able to support a blacklist (easily). If anyone knows what they're doing here, please do get in touch. I would greatly prefer a concise solution like this one to having to pre-generate four giant tables.
