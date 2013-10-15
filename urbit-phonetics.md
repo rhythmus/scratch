@@ -33,9 +33,9 @@ Mnemnion, I'm sorry, I have to use the letter e - a VCV group would only have 19
 
 IPA is simple:
 
-    p  /p/   b  /b/   m  /m/   f/v  /f~v/   h  /h/   l/r  /l~r/
+    p  /p/   b  /b/   m  /m/   f/v  /f~v/   h  /h/
     t  /t/   d  /d/   n  /n/   s/z  /s~z/   y  /j/
-    k  /k/   g  /g/
+    k  /k/   g  /g/            l/r  /l~r/
 
 #### Moving on:
 

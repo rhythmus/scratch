@@ -1,23 +1,135 @@
-@blacklist = %w(nig dik fuk fok fag kak pis god vag vom)
+# 1. Create the letter sets
 
-@block1 = %w(pa pe pi po pu ta te ti to tu ka ke ki ko ku ba be bi bo bu da de di do du ga ge gi go gu ma me mi mo mu na ne ni no nu fa fe fi fo fu za ze zi zo zu la le li lo lu ha he hi ho hu)
+@initials = %w(p t k b d g m n f z l h)
+@vowels = %w(a e i o u)
+@evens = %w(b d g n v z r)
+@odds = %w(p t k m f s l)
+@finals = %w(p t k b d g m n v s r y)
 
-@block2 = %w(tp kp mp fp sp lp db gb nb vb zb rb pt kt mt ft st lt bd gd nd vd zd rd pk tk mk fk sk lk bg dg ng vg zg rg pm tm km fm sm lm bn dn gn vn zn rn pf tf kf mf sf lf bv dv gv nv zv rv ps ts ks ms fs ls bz dz gz nz vz rz pl tl kl ml fl sl br dr gr nr vr zr)
+# 2. Create the syllable sets/lookup tables
+# Sinistra = little end
+# Dextra = big end
 
-@block3 = %w(ap ep ip op up at et it ot ut ak ek ik ok uk ab eb ib ob ub ad ed id od ud ag eg ig og ug am em im om um an en in on un av ev iv ov uv as es is os us ar er ir or ur ay ey iy oy uy)
+@sinistra_even = []
+@sinistra_odd = []
 
-def random_word
-  "#{@block1.sample}#{@block2.sample}#{@block3.sample}"
+@dextra_even = []
+@dextra_odd = []
+
+@initials.each do |initial|
+  @vowels.each do |vowel|
+    @evens.each do |even|
+      @sinistra_even.push "#{initial}#{vowel}#{even}"
+    end
+    @odds.each do |odd|
+      @sinistra_odd.push "#{initial}#{vowel}#{odd}"
+    end
+  end
 end
 
-srand
+@finals.each do |final|
+  @vowels.each do |vowel|
+    @evens.each do |even|
+      @dextra_even.push "#{even}#{vowel}#{final}"
+    end
+    @odds.each do |odd|
+      @dextra_odd.push "#{odd}#{vowel}#{final}"
+    end
+  end
+end
 
-cruiser = "~#{random_word}"
-destroyer = "~#{random_word}-#{random_word}"
-yacht = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}"
-submarine = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}--#{random_word}-#{random_word}-#{random_word}-#{random_word}"
+# 3. Blacklist
 
-puts cruiser
-puts destroyer
-puts yacht
-puts submarine
+@blacklist = %w(nig nog dik fuk fok fag kak kok pis god vag vom)
+
+256.times do |index|
+  if @blacklist.include? @sinistra_even[index] or @blacklist.include? @sinistra_odd[index]
+    @sinistra_even.delete_at index
+    @sinistra_odd.delete_at index
+  end
+  if @blacklist.include? @dextra_even[index] or @blacklist.include? @dextra_odd[index]
+    @dextra_even.delete_at index
+    @dextra_odd.delete_at index
+  end
+end
+
+# 4. Randomise our selection - all arrays should be randomised in the same way
+
+srand(1997) # skynet becomes self-aware
+
+max_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, @dextra_odd.length].max
+zod_index = @dextra_even.index "zod"
+
+slice = (0..max_length).to_a.shuffle!
+slice.delete zod_index
+slice.insert 0, zod_index
+
+sinistra_even_new = []
+sinistra_odd_new = []
+dextra_even_new = []
+dextra_odd_new = []
+
+256.times do |index|
+  sinistra_even_new.push @sinistra_even[slice[index]]
+  sinistra_odd_new.push @sinistra_odd[slice[index]]
+  dextra_even_new.push @dextra_even[slice[index]]
+  dextra_odd_new.push @dextra_odd[slice[index]]
+end
+
+@sinistra_even = sinistra_even_new
+@sinistra_odd = sinistra_odd_new
+@dextra_even = dextra_even_new
+@dextra_odd = dextra_odd_new
+
+# 5. Check everything's okay
+
+puts @sinistra_even.to_s
+puts @sinistra_odd.to_s
+puts @dextra_even.to_s
+puts @dextra_odd.to_s
+
+# FUNCTION DEFINITIONS
+
+def eight_bit_word(value)
+  value %= 256
+  if value.even?
+    "#{@dextra_even[big_end]}"
+  else
+    "#{@dextra_odd[big_end]}"
+  end
+end
+
+def sixteen_bit_word(value)
+  value %= 65536
+  little_end = value % 256
+  big_end = (value - little_end) / 256
+  if value.even?
+    "#{@sinistra_even[little_end]}#{@dextra_even[big_end]}"
+  else
+    "#{@sinistra_odd[little_end]}#{@dextra_odd[big_end]}"
+  end
+end
+
+# EXAMPLES
+
+def random_word
+  sixteen_bit_word(rand(65536))
+end
+
+# cruiser = "~#{random_word}"
+# destroyer = "~#{random_word}-#{random_word}"
+# yacht = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}"
+# submarine = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}--#{random_word}-#{random_word}-#{random_word}-#{random_word}"
+
+# puts cruiser
+# puts destroyer
+# puts yacht
+# puts submarine
+
+# 512.times do |index|
+#   if index < 256
+#     puts eight_bit_word(index)
+#   else
+#     puts sixteen_bit_word(index)
+#   end
+# end
