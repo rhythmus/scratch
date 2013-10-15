@@ -1,6 +1,6 @@
 ## Proposal B
 
-Building on top of [the letter set I chose before](https://github.com/dclelland/scratch/blob/master/urbit-phonetics-a.md), I've been experimenting with a **CVCCVC** format.
+Building on top of [the letter set I chose before](https://github.com/dclelland/scratch/blob/master/urbit-phonetics.md), I've been experimenting with a **CVCCVC** format.
 
 (To make this easier, I'll split into three blocks of two).
 
