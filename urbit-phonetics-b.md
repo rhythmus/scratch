@@ -1,18 +1,20 @@
 ## Proposal B
 
-I shall stick to my [established letter sets](https://github.com/dclelland/scratch/blob/master/urbit-phonetics-a.md), but work with a CVCCVC structure (which I shall split into three two-character blocks and address as blocks A, B, and C from now on).
+Building on top of [the letter set I chose before](https://github.com/dclelland/scratch/blob/master/urbit-phonetics-a.md), I've been experimenting with a **CVCCVC** format.
 
-Blocks A and C are the simplest, comprising just a consonant and a vowel each.
+(To make this easier, I'll split into three blocks of two).
 
-I selected my consonants starting with the six basic stops (p t k b d g), followed by two nasals (m and n).
+The **CV** and **VC** blocks are the simplest.
+
+I selected my consonants starting with the six basic stops (p, t, k, b, d, g), followed by two nasals (m, n).
 Then four fricatives and two liquids (f/v, s/z, l/r), in pairs between sets in order to avoid ambiguity.
-And finally h and y. H tends to disappear at the end of words so I keep h in the first set and balance it out with y in the final set.
+And finally (h/y), as /h/ tends to disappear at the end of words so I keep it in the first set and balance it out with /y/ in the final set.
 
-    Block A consonants      p t k b d g m n f z l h
-    Block C consonants      p t k b d g m n v s r y
+    Initial consonants      p t k b d g m n f z l h
+    Final consonants        p t k b d g m n v s r y
     Vowels                  a e i o u
 
-Block B, comprising two consonants, is trickier. I mapped out all two-consonant combinations, then eliminated double-ups and pairs where a voiced consonant was matched with an unvoiced consonant (I have generalised n and r as voiced and m and l as voiced so that our system works). This is so that even if the user pronounces, say, /sm/ as /zm/ (as is pretty common in European languages, especially English), we still know it should be /sm/. It's like a really basic checksum.
+The **CC** block is trickier. I mapped out all two-consonant combinations, then eliminated double-ups and pairs where a voiced consonant was matched with an unvoiced consonant. I have generalised n and r as voiced and m and l as voiced so that our system works. This is so that even if the user pronounces, say, /sm/ as /zm/ (as is pretty common in European languages, especially English), we still know it should be /sm/. It's like a really basic checksum. Makes it easy on the poor old speech-to-text converter, too.
 
        p  b  t  d  k  g  m  n  f  v  s  z  l  r 
     p        tp    kp    mp    fp    sp    lp   
@@ -32,7 +34,7 @@ Block B, comprising two consonants, is trickier. I mapped out all two-consonant 
 
 Taking all combinations gives us three blocks of 60, 84, and 60 combinations respectively.
 
-    Block A          Block B                Block C
+    CV               CC                     VC
     pa pe pi po pu   pt tp kp mp fp sp lp   ap ep ip op up
     ta te ti to tu   bd db gb nb vb zb rb   at et it ot ut
     ka ke ki ko ku   pk tk kt mt ft st lt   ak ek ik ok uk
@@ -65,7 +67,7 @@ Good to go! Let's generate some fake ship names to test (of course, we can't do 
 
 So far I've looked at two ways of generating words from numbers.
 
-The *first* approach involves generating a lookup table with four sets of 256 syllables, one each for every combination of left, right, odd, and even.
+The **first** approach involves generating a lookup table with four sets of 256 syllables, one each for every combination of left, right, odd, and even.
 
 This allows us to select voiced or unvoiced boundary consonants based on whether the number is odd or even. In true urbit fashion, zero (true) is voiced (this allows for ~zod, as well).
 
@@ -216,7 +218,7 @@ Numbers 0-512:
     ~libzat ~humsat ~bivzat ~laksat ~hebzat ~bolsat ~doznor
 
 
-The *second* approach is to select letters one by one, as if from a branching tree diagram. This is perhaps best illustrated in code:
+The **second** approach is to select letters one by one, as if from a branching tree diagram. This is perhaps best illustrated in code:
 
     @initials = %w(p t k b d g m n f z l h)
     @vowels = %w(a e i o u)
