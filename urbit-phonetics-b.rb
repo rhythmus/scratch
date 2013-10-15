@@ -7,8 +7,6 @@
 @finals = %w(p t k b d g m n v s r y)
 
 # 2. Create the syllable sets/lookup tables
-# Sinistra = little end
-# Dextra = big end
 
 @sinistra_even = []
 @sinistra_odd = []
@@ -57,7 +55,7 @@ end
 
 srand(1997) # skynet becomes self-aware
 
-max_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, @dextra_odd.length].max
+max_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, @dextra_odd.length].min
 zod_index = @dextra_even.index "zod"
 
 slice = (0..max_length).to_a.shuffle!
@@ -83,19 +81,19 @@ end
 
 # 5. Check everything's okay
 
-# puts @sinistra_even.to_s
-# puts @sinistra_odd.to_s
-# puts @dextra_even.to_s
-# puts @dextra_odd.to_s
+puts @sinistra_even.to_s
+puts @sinistra_odd.to_s
+puts @dextra_even.to_s
+puts @dextra_odd.to_s
 
 # FUNCTION DEFINITIONS
 
 def eight_bit_word(value)
   value %= 256
   if value.even?
-    "#{@dextra_even[big_end]}"
+    "#{@dextra_even[value]}"
   else
-    "#{@dextra_odd[big_end]}"
+    "#{@dextra_odd[value]}"
   end
 end
 
@@ -112,6 +110,8 @@ end
 
 # EXAMPLES
 
+srand
+
 def random_word
   sixteen_bit_word(rand(65536))
 end
@@ -125,6 +125,8 @@ puts cruiser
 puts destroyer
 puts yacht
 puts submarine
+
+# List numbers
 
 512.times do |index|
   if index < 256

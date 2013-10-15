@@ -90,12 +90,20 @@ This approach however does however allow us blacklist offensive syllables. I've 
 
 ([Here's the code.](https://github.com/dclelland/scratch/blob/master/urbit-phonetics-b.rb)) And some more sample ships.
 
+Syllable tables:
 
 
 
 
 
 
+
+Example ships:
+
+    ~leskoy
+    ~zopmem-hemtov
+    ~parzum-zodbin-litfor-monruy
+    ~pumlun-leskov-notsur-zevgip--pokkug-bavnur-tatlad-niplad
 
 The *second* approach is to select letters one by one, as if from a branching tree diagram. This is perhaps best illustrated in code:
 
