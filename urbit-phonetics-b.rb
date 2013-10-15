@@ -83,10 +83,10 @@ end
 
 # 5. Check everything's okay
 
-puts @sinistra_even.to_s
-puts @sinistra_odd.to_s
-puts @dextra_even.to_s
-puts @dextra_odd.to_s
+# puts @sinistra_even.to_s
+# puts @sinistra_odd.to_s
+# puts @dextra_even.to_s
+# puts @dextra_odd.to_s
 
 # FUNCTION DEFINITIONS
 
@@ -116,20 +116,20 @@ def random_word
   sixteen_bit_word(rand(65536))
 end
 
-# cruiser = "~#{random_word}"
-# destroyer = "~#{random_word}-#{random_word}"
-# yacht = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}"
-# submarine = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}--#{random_word}-#{random_word}-#{random_word}-#{random_word}"
+cruiser = "~#{random_word}"
+destroyer = "~#{random_word}-#{random_word}"
+yacht = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}"
+submarine = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}--#{random_word}-#{random_word}-#{random_word}-#{random_word}"
 
-# puts cruiser
-# puts destroyer
-# puts yacht
-# puts submarine
+puts cruiser
+puts destroyer
+puts yacht
+puts submarine
 
-# 512.times do |index|
-#   if index < 256
-#     puts eight_bit_word(index)
-#   else
-#     puts sixteen_bit_word(index)
-#   end
-# end
+512.times do |index|
+  if index < 256
+    puts eight_bit_word(index)
+  else
+    puts sixteen_bit_word(index)
+  end
+end
