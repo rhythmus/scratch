@@ -44,10 +44,16 @@ max_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, 
 
 max_length.times do |index|
   if @blacklist.include? @sinistra_even[index] or @blacklist.include? @sinistra_odd[index] or @blacklist.include? @dextra_even[index] or @blacklist.include? @dextra_odd[index]
+    # puts "#{@sinistra_even[index]} #{@sinistra_odd[index]} #{@dextra_even[index]} #{@dextra_odd[index]}"
     @sinistra_even.delete_at index
     @sinistra_odd.delete_at index
     @dextra_even.delete_at index
     @dextra_odd.delete_at index
+  end
+  if index.even?
+    puts "#{@sinistra_even[index]} #{@sinistra_odd[index]} #{@dextra_even[index]} #{@dextra_odd[index]} E"
+  else
+    puts "#{@sinistra_even[index]} #{@sinistra_odd[index]} #{@dextra_even[index]} #{@dextra_odd[index]} O"
   end
 end
 
@@ -81,10 +87,10 @@ end
 
 # 5. Check everything's okay
 
-puts @sinistra_even.to_s
-puts @sinistra_odd.to_s
-puts @dextra_even.to_s
-puts @dextra_odd.to_s
+# puts @sinistra_even.to_s
+# puts @sinistra_odd.to_s
+# puts @dextra_even.to_s
+# puts @dextra_odd.to_s
 
 # FUNCTION DEFINITIONS
 
@@ -121,15 +127,15 @@ destroyer = "~#{random_word}-#{random_word}"
 yacht = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}"
 submarine = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}--#{random_word}-#{random_word}-#{random_word}-#{random_word}"
 
-puts cruiser
-puts destroyer
-puts yacht
-puts submarine
+# puts cruiser
+# puts destroyer
+# puts yacht
+# puts submarine
 
-513.times do |index|
-  if index < 256
-    puts eight_bit_word(index)
-  else
-    puts sixteen_bit_word(index)
-  end
-end
+# 513.times do |index|
+#   if index < 256
+#     puts eight_bit_word(index)
+#   else
+#     puts sixteen_bit_word(index)
+#   end
+# end
