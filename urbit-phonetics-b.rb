@@ -44,16 +44,11 @@ max_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, 
 
 max_length.times do |index|
   if @blacklist.include? @sinistra_even[index] or @blacklist.include? @sinistra_odd[index] or @blacklist.include? @dextra_even[index] or @blacklist.include? @dextra_odd[index]
-    # puts "#{@sinistra_even[index]} #{@sinistra_odd[index]} #{@dextra_even[index]} #{@dextra_odd[index]}"
+    puts "#{@sinistra_even[index]} #{@sinistra_odd[index]} #{@dextra_even[index]} #{@dextra_odd[index]}"
     @sinistra_even.delete_at index
     @sinistra_odd.delete_at index
     @dextra_even.delete_at index
     @dextra_odd.delete_at index
-  end
-  if index.even?
-    puts "#{@sinistra_even[index]} #{@sinistra_odd[index]} #{@dextra_even[index]} #{@dextra_odd[index]} E"
-  else
-    puts "#{@sinistra_even[index]} #{@sinistra_odd[index]} #{@dextra_even[index]} #{@dextra_odd[index]} O"
   end
 end
 
