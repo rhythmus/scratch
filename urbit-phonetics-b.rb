@@ -44,7 +44,6 @@ max_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, 
 
 max_length.times do |index|
   if @blacklist.include? @sinistra_even[index] or @blacklist.include? @sinistra_odd[index] or @blacklist.include? @dextra_even[index] or @blacklist.include? @dextra_odd[index]
-    puts "#{@sinistra_even[index]} #{@sinistra_odd[index]} #{@dextra_even[index]} #{@dextra_odd[index]}"
     @sinistra_even.delete_at index
     @sinistra_odd.delete_at index
     @dextra_even.delete_at index
@@ -59,26 +58,26 @@ srand(1997) # skynet becomes self-aware
 min_length = [@sinistra_even.length, @sinistra_odd.length, @dextra_even.length, @dextra_odd.length].min
 zod_index = @dextra_even.index "zod"
 
-slice = (0..min_length).to_a.shuffle!
-slice.delete zod_index
-slice.insert 0, zod_index
+# slice = (0..min_length).to_a.shuffle!
+# slice.delete zod_index
+# slice.insert 0, zod_index
 
-sinistra_even_new = []
-sinistra_odd_new = []
-dextra_even_new = []
-dextra_odd_new = []
+# sinistra_even_new = []
+# sinistra_odd_new = []
+# dextra_even_new = []
+# dextra_odd_new = []
 
-256.times do |index|
-  sinistra_even_new.push @sinistra_even[slice[index]]
-  sinistra_odd_new.push @sinistra_odd[slice[index]]
-  dextra_even_new.push @dextra_even[slice[index]]
-  dextra_odd_new.push @dextra_odd[slice[index]]
-end
+# 256.times do |index|
+#   sinistra_even_new.push @sinistra_even[slice[index]]
+#   sinistra_odd_new.push @sinistra_odd[slice[index]]
+#   dextra_even_new.push @dextra_even[slice[index]]
+#   dextra_odd_new.push @dextra_odd[slice[index]]
+# end
 
-@sinistra_even = sinistra_even_new
-@sinistra_odd = sinistra_odd_new
-@dextra_even = dextra_even_new
-@dextra_odd = dextra_odd_new
+# @sinistra_even = sinistra_even_new
+# @sinistra_odd = sinistra_odd_new
+# @dextra_even = dextra_even_new
+# @dextra_odd = dextra_odd_new
 
 # 5. Check everything's okay
 
@@ -122,10 +121,10 @@ destroyer = "~#{random_word}-#{random_word}"
 yacht = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}"
 submarine = "~#{random_word}-#{random_word}-#{random_word}-#{random_word}--#{random_word}-#{random_word}-#{random_word}-#{random_word}"
 
-# puts cruiser
-# puts destroyer
-# puts yacht
-# puts submarine
+puts cruiser
+puts destroyer
+puts yacht
+puts submarine
 
 # 513.times do |index|
 #   if index < 256
