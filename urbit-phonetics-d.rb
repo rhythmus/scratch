@@ -6,32 +6,36 @@
 
 @alphabet = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
 
-puts @alphabet.permutation(2).to_a.to_s
+#     a  e  i  o  u   w  y   p  b  t  d  k  g   m  n   f  v  s  z   l  r   c  h  j  q  x
+# a     ae ai ao au  aw ay  ap ab at ad ak ag  am an  af av as az  al ar  ac ah aj aq ax
+# e  ea    ei eo eu  ew ey  ep eb et ed ek eg  em en  ef ev es ez  el er  ec eh ej eq ex
+# i  ia ie    io iu  iw iy  ip ib it id ik ig  im in  if iv is iz  il ir  ic ih ij iq ix
+# o  oa oe oi    ou  ow oy  op ob ot od ok og  om on  of ov os oz  ol or  oc oh oj oq ox
+# u  ua ue ui uo     uw uy  up ub ut ud uk ug  um un  uf uv us uz  ul ur  uc uh uj uq ux
+#                                                                                       
+# w  wa we wi wo wu     wy  wp wb wt wd wk wg  wm wn  wf wv ws wz  wl wr  wc wh wj wq wx
+# y  ya ye yi yo yu  yw     yp yb yt yd yk yg  ym yn  yf yv ys yz  yl yr  yc yh yj yq yx
+#                                                                                       
+# p  pa pe pi po pu  pw py     pb pt pd pk pg  pm pn  pf pv ps pz  pl pr  pc ph pj pq px
+# b  ba be bi bo bu  bw by  bp    bt bd bk bg  bm bn  bf bv bs bz  bl br  bc bh bj bq bx
+# t  ta te ti to tu  tw ty  tp tb    td tk tg  tm tn  tf tv ts tz  tl tr  tc th tj tq tx
+# d  da de di do du  dw dy  dp db dt    dk dg  dm dn  df dv ds dz  dl dr  dc dh dj dq dx
+# k  ka ke ki ko ku  kw ky  kp kb kt kd    kg  km kn  kf kv ks kz  kl kr  kc kh kj kq kx
+# g  ga ge gi go gu  gw gy  gp gb gt gd gk     gm gn  gf gv gs gz  gl gr  gc gh gj gq gx
+#                                                                                       
+# m  ma me mi mo mu  mw my  mp mb mt md mk mg     mn  mf mv ms mz  ml mr  mc mh mj mq mx
+# n  na ne ni no nu  nw ny  np nb nt nd nk ng  nm     nf nv ns nz  nl nr  nc nh nj nq nx
+#                                                                                       
+# f  fa fe fi fo fu  fw fy  fp fb ft fd fk fg  fm fn     fv fs fz  fl fr  fc fh fj fq fx
+# v  va ve vi vo vu  vw vy  vp vb vt vd vk vg  vm vn  vf    vs vz  vl vr  vc vh vj vq vx
+# s  sa se si so su  sw sy  sp sb st sd sk sg  sm sn  sf sv    sz  sl sr  sc sh sj sq sx
+# z  za ze zi zo zu  zw zy  zp zb zt zd zk zg  zm zn  zf zv zs zy  zl zr  zc zh zj zq zx
 
-#    a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
-# a     ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar as at au av aw ax ay az
-# b  ba    bc bd be bf bg bh bi bj bk bl bm bn bo bp bq br bs bt bu bv bw bx by bz
-# c  ca cb    cd ce cf cg ch ci cj ck cl cm cn co cp cq cr cs ct cu cv cw cx cy cz
-# d  da db dc    de df dg dh di dj dk dl dm dn do dp dq dr ds dt du dv dw dx dy dz
-# e  ea eb ec ed    ef eg eh ei ej ek el em en eo ep eq er es et eu ev ew ex ey ez
-# f  fa fb fc fd fe    fg fh fi fj fk fl fm fn fo fp fq fr fs ft fu fv fw fx fy fz
-# g  ga gb gc gd ge gf    gh gi gj gk gl gm gn go gp gq gr gs gt gu gv gw gx gy gz
-# h  ha hb hc hd he hf hg    hi hj hk hl hm hn ho hp hq hr hs ht hu hv hw hx hy hz
-# i  ia ib ic id ie if ig ih    ij ik il im in io ip iq ir is it iu iv iw ix iy iz
-# j  ja jb jc jd je jf jg jh ji    jk jl jm jn jo jp jq jr js jt ju jv jw jx jy jz
-# k  ka kb kc kd ke kf kg kh ki kj    kl km kn ko kp kq kr ks kt ku kv kw kx ky kz
-# l  la lb lc ld le lf lg lh li lj lk    lm ln lo lp lq lr ls lt lu lv lw lx ly lz
-# m  ma mb mc md me mf mg mh mi mj mk ml    mn mo mp mq mr ms mt mu mv mw mx my mz
-# n  na nb nc nd ne nf ng nh ni nj nk nl nm    no np nq nr ns nt nu nv nw nx ny nz
-# o  oa ob oc od oe of og oh oi oj ok ol om on    op oq or os ot ou ov ow ox oy oz
-# p  pa pb pc pd pe pf pg ph pi pj pk pl pm pn po    pq pr ps pt pu pv pw px py pz
-# q  qa qb qc qd qe qf qg qh qi qj qk ql qm qn qo qp    qr qs qt qu qv qw qx qy qz
-# r  ra rb rc rd re rf rg rh ri rj rk rl rm rn ro rp rq    rs rt ru rv rw rx ry rz
-# s  sa sb sc sd se sf sg sh si sj sk sl sm sn so sp sq sr    st su sv sw sx sy sz
-# t  ta tb tc td te tf tg th ti tj tk tl tm tn to tp tq tr ts    tu tv tw tx ty tz
-# u  ua ub uc ud ue uf ug uh ui uj uk ul um un uo up uq ur us ut    uv uw ux uy uz
-# v  va vb vc vd ve vf vg vh vi vj vk vl vm vn vo vp vq vr vs vt vu    vw vx vy vz
-# w  wa wb wc wd we wf wg wh wi wj wk wl wm wn wo wp wq wr ws wt wu wv    wx wy wz
-# x  xa xb xc xd xe xf xg xh xi xj xk xl xm xn xo xp xq xr xs xt xu xv xw    xy xz
-# y  ya yb yc yd ye yf yg yh yi yj yk yl ym yn yo yp yq yr ys yt yu yv yw yx    yz
-# z  za zb zc zd ze zf zg zh zi zj zk zl zm zn zo zp zq zr zs zt zu zv zw zx    zy
+# l  la le li lo lu  lw ly  lp lb lt ld lk lg  lm ln  lf lv ls lz     lr  lc lh lj lq lx
+# r  ra re ri ro ru  rw ry  rp rb rt rd rk rg  rm rn  rf rv rs rz  rl     rc rh rj rq rx
+#                                                                                       
+# c  ca ce ci co cu  cw cy  cp cb ct cd ck cg  cm cn  cf cv cs cz  cl cr     ch cj cq cx
+# h  ha he hi ho hu  hw hy  hp hb ht hd hk hg  hm hn  hf hv hs hz  hl hr  hc    hj hq hx
+# j  ja je ji jo ju  jw jy  jp jb jt jd jk jg  jm jn  jf jv js jz  jl jr  jc jh    jq jx
+# q  qa qe qi qo qu  qw qy  qp qb qt qd qk qg  qm qn  qf qv qs qz  ql qr  qc qh qj    qx
+# x  xa xe xi xo xu  xw xy  xp xb xt xd xk xg  xm xn  xf xv xs xz  xl xr  xc xh xj xq   
