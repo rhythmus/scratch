@@ -1,3 +1,47 @@
+# Should just do a thing which is guaranteed to generate unique quadgrams
+
+
+
+
+@initials = %w(p t k b d g m n f z l h)
+@finals = %w(p t k b d g m n v s r y)
+
+@vowels = %w(a e i o u)
+@evens = %w(b d g n v z r)
+@odds = %w(p t k m f s l)
+
+# 2. Create the syllable sets/lookup tables
+
+@sinistra_even = []
+@sinistra_odd = []
+
+@dextra_even = []
+@dextra_odd = []
+
+@initials.each do |initial|
+  @vowels.each do |vowel|
+    @evens.each do |even|
+      @sinistra_even.push "#{initial}#{vowel}#{even}"
+    end
+    @odds.each do |odd|
+      @sinistra_odd.push "#{initial}#{vowel}#{odd}"
+    end
+  end
+end
+
+@finals.each do |final|
+  @vowels.each do |vowel|
+    @evens.each do |even|
+      @dextra_even.push "#{even}#{vowel}#{final}"
+    end
+    @odds.each do |odd|
+      @dextra_odd.push "#{odd}#{vowel}#{final}"
+    end
+  end
+end
+
+
+
 @phonemes = [["doz", "dos", "zod", "sod"],
             ["paz", "pas", "zap", "sap"],
             ["peb", "pep", "bep", "pep"],
